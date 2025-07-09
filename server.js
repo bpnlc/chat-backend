@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://your-frontend-url.com", // Replace with deployed frontend later
+    origin: "https://chat-frontendd.netlify.app/", // Replace with deployed frontend later
     methods: ["GET", "POST"],
   },
 });
