@@ -6,16 +6,12 @@ const cors = require("cors");
 const { Server } = require("socket.io");
 
 const app = express();
-app.use(cors());
-
+app.use(
+  cors({
+    origin: "https://chat-frontendd.netlify.app",
+  })
+);
 const server = http.createServer(app);
-
-const io = new Server(server, {
-  cors: {
-    origin: "https://chat-frontendd.netlify.app", // Replace with deployed frontend later
-    methods: ["GET", "POST"],
-  },
-});
 
 // Track connected users: socketId -> username
 const users = new Map();
